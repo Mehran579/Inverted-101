@@ -48,6 +48,7 @@ public class bombtrigger : MonoBehaviour
                 Invoke(nameof(thankd3), 10f);
                 Debug.Log("iamtired");
                 Invoke(nameof(continuetextf), 15f);
+                Invoke(nameof(startmusicagain), 14f);
                 knightinvoked = false;
             }
             boxtrigger_Spawner.boxcredits = 0;
@@ -90,6 +91,11 @@ public class bombtrigger : MonoBehaviour
         hehebomb.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-10f, -10f);
         audiomanager.playsfx(audiomanager.bomb);
         audiomanager.playmusic(audiomanager.helicopter, false);
+        audiomanager.music.Stop();
+    }
+    void startmusicagain()
+    {
+        audiomanager.music.Play();
     }
     void thankd3()
     {

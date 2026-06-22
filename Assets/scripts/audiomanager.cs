@@ -17,6 +17,10 @@ public class audiomanager : MonoBehaviour
     public AudioClip box_falling;
     public AudioClip box_destroying;
     public AudioClip letterpop;
+    public AudioClip closing;
+    public AudioClip attack;
+    public AudioClip squish;
+    public AudioClip finalbosslaugh;
     public void Start()
     {
         music.clip = bgmusic;

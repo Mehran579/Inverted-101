@@ -34,7 +34,7 @@ public class whitebug : MonoBehaviour
     {
         if (bugobtained)
         {
-            transform.position = new Vector2(player.transform.position.x,player.transform.position.y+1.2f);
+            transform.position = new Vector2(player.transform.position.x,player.transform.position.y+0.6f);
         }
     }
 }

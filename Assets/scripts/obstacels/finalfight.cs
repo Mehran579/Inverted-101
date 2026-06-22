@@ -16,6 +16,7 @@ public class finalfight : MonoBehaviour
     public GameObject whtabugdoinghere;
     public GameObject butimaknight;
     public ParticleSystem expo3;
+    public audiomanager audiomanager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +30,7 @@ public class finalfight : MonoBehaviour
         dialogue1.SetActive(false);
         whtabugdoinghere.SetActive(false);
         butimaknight.SetActive(false);
+        audiomanager = GameObject.FindWithTag("audio").GetComponent<audiomanager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +48,7 @@ public class finalfight : MonoBehaviour
                 Invoke(nameof(activateboss), 1f);
                 initiated = false;
                 barright.SetActive(true);
+                audiomanager.playsfx(audiomanager.closing);
                 barleft.SetActive(true);
                 Invoke(nameof(BOSSIattack),7f);
                 Invoke(nameof(startfinalpieceofart), 7f);
@@ -65,9 +68,11 @@ public class finalfight : MonoBehaviour
     void expo()
     {
         Instantiate(expo3,bossattack.transform.position, Quaternion.identity);
+        audiomanager.playsfx(audiomanager.squish);
     }
     void butamaknight()
     {
+        audiomanager.music.Stop();
         butimaknight.SetActive(true);
     }
     void showwhtabug()
@@ -86,6 +91,7 @@ public class finalfight : MonoBehaviour
     void BOSSIattack()
     {
         bossattack.SetActive (true);
+        audiomanager.playsfx(audiomanager.attack);
     }
     void movecamera()
     {

@@ -22,6 +22,10 @@ public class boxobsscript : MonoBehaviour
             audiomanager.playsfx(audiomanager.player_death);
             Invoke(nameof(restart), 0.9f);
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("White layer"))
+        { 
+            audiomanager.playsfx(audiomanager.box_falling);
+        }
     }
     public void restart()
     {

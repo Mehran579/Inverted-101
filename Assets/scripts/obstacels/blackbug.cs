@@ -25,7 +25,7 @@ public class blackbug : MonoBehaviour
     {
         if (b_bugobtained)
         {
-            transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 1.2f);
+            transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 0.6f);
         }
     }
     void killdabug()
