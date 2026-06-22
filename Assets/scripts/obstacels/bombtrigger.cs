@@ -96,5 +96,6 @@ public class bombtrigger : MonoBehaviour
         thanksd3.SetActive(true);
         Destroy(thanksd3, 2.5f);
         Destroy(bosshealth, 3f);
+        Debug.Log('h');
     }
 }
